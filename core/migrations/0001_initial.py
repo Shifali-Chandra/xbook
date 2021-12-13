@@ -28,14 +28,7 @@ class Migration(migrations.Migration):
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.CreateModel(
-            name='Coupon',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('code', models.CharField(max_length=15)),
-                ('amount', models.FloatField()),
-            ],
-        ),
+
         migrations.CreateModel(
             name='Item',
             fields=[
@@ -63,7 +56,6 @@ class Migration(migrations.Migration):
                 ('refund_requested', models.BooleanField(default=False)),
                 ('refund_granted', models.BooleanField(default=False)),
                 ('billing_address', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='billing_address', to='core.Address')),
-                ('coupon', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='core.Coupon')),
             ],
         ),
         migrations.CreateModel(
